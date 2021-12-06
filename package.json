@@ -1,0 +1,30 @@
+{
+  "name": "trade_record",
+  "version": "1.0.0",
+  "description": "Trade log application that: log trade, performance of the trader and review trade and form key statistic for both summarise data or forecast",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/June-Tr/trade_record.git"
+  },
+  "keywords": [
+    "sql",
+    "javascript",
+    "node",
+    "react",
+    "html",
+    "css"
+  ],
+  "author": "June (Xuan)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/June-Tr/trade_record/issues"
+  },
+  "homepage": "https://github.com/June-Tr/trade_record#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
