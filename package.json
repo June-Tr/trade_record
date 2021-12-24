@@ -25,9 +25,11 @@
   },
   "homepage": "https://github.com/June-Tr/trade_record#readme",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mocha": "^9.1.3",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "string": "^3.3.3"
   }
 }
