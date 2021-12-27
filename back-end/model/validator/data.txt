@@ -1,5 +1,1 @@
-{
-    init = {},
-    currentAccSize = 600,
-    init = {}
-}
+{"entryTime":1640365097365,"init":{"entry":1,"currentStop":0.5,"currentTakeProfit":2}}

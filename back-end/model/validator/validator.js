@@ -1,17 +1,20 @@
 "use strict";
 require("../validator/strategy/holder");
-require("./runningTrade");
+var RunningTrade = require("./runningTrade");
+var Holder = require("./strategy/holder");
 
-class Validator{
+module.exports = class Validator {
 
-    constructor(strategyHolder, typeDict){
+    constructor(strategyHolder, typeDict, RunningTrade){
+        
         this._strategyHolder = strategyHolder;
         this._typeDict = typeDict;
-        this._runningTrade = new runningTrade();
+        this._runningTrade = RunningTrade;
+        this._runningTrade = new RunningTrade();
     }
 
-    backupHook(){
-        this._runningTrade.backupHook();
+    shutdownHook(){
+        this._runningTrade.shutdownHook();
     }
 
     verify(order){
@@ -31,4 +34,18 @@ class Validator{
 
         return res;
     }
-}
+};
+
+var val = new Validator(new Holder(), {});
+
+let res = val.verify(
+    {
+
+        price:1,
+        stopLost:0.5,
+        takeProfit: 2,
+        pipsPrice : 2
+    }
+)
+val.shutdownHook();
+console.log(res);
