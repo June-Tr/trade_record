@@ -2,7 +2,7 @@
 const logger = require("../../../../utility/log");
 
 
-module.exports = class Holder {
+class Holder {
 
     constructor(controller){
         this._strategy = [];
@@ -41,7 +41,7 @@ module.exports = class Holder {
      * @param {Json} order the information that will be verify
      */
     verify(order){
-        var returnInfo = [];
+        returnInfo = [];
 
         this._strategy.forEach(element => {
             var res = element.validate(order);
@@ -63,4 +63,3 @@ module.exports = class Holder {
         this._controller(information);
     }
 }
-

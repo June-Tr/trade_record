@@ -3,13 +3,12 @@
 const logger = require("../../../utility/log");
 const fs = require("fs");
 
-module.exports = class runningTrade{
+class runningTrade{
 
     constructor(){
         fs.readFile(
-            "./back-end/model/validator/data.txt", 'utf8', (err, data) => {
+            "./data.txt", 'utf8', (err, data) => {
                 if(err){
-                    console.log(err);
                     logger.writeLog("Fail to find the data file to initiate the running Trade!!!", "<running trade initiation>");
                     return;
                 }
@@ -90,7 +89,7 @@ module.exports = class runningTrade{
                         error: 1
                     }]
                 }
-                this._init = {};
+
                 this._init.entry = order.price;
                 this._init.currentStop = order.stopLost;
                 this._init.currentTakeProfit = order.takeProfit;
@@ -125,7 +124,7 @@ module.exports = class runningTrade{
                 entryTime: this._entryTime,
                 init: this._init
             }
-            fs.writeFileSync("./back-end/model/validator/data.txt", 
+            fs.writeFileSync("./data.txt", 
                 JSON.stringify(backUp)
             )
         }catch(err){
