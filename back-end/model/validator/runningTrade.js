@@ -3,7 +3,7 @@
 const logger = require("../../../utility/log");
 const fs = require("fs");
 
-module.exports = class runningTrade{
+class runningTrade{
 
     constructor(){
         fs.readFile(
@@ -133,3 +133,5 @@ module.exports = class runningTrade{
         }
     }
 }
+
+module.exports = new runningTrade();

@@ -2,9 +2,9 @@
 const logger = require("../../../../utility/log");
 
 
-module.exports = class Holder {
+class Holder {
 
-    constructor(controller){
+    constructor(){
         this._strategy = [];
         this._controller = controller;
     }
@@ -64,3 +64,4 @@ module.exports = class Holder {
     }
 }
 
+module.exports = new Holder();
