@@ -51,6 +51,10 @@ class connectorCache {
         return order;
     }
 
+    retrieveEntry(){
+        return this._entry;
+    }
+    
     trigger(){
         let res = [];
         for(var price of this._init){
@@ -69,7 +73,11 @@ class connectorCache {
     }
 
     isOnTrade(){
-        return(this._entry != null && this._isTrigger == false);
+        return(this._entry != null && this._isTrigger == true);
+    }
+
+    waitForTrigger(){
+        return (this._entry != null && this._isTrigger == false);
     }
 
     /**
