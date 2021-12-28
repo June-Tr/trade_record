@@ -51,6 +51,11 @@ class connectorCache {
         return order;
     }
 
+    requestId(){
+        let res = this._cur;
+        this._cur += 1;
+    }
+
     retrieveEntry(){
         return this._entry;
     }

@@ -63,6 +63,11 @@ let connector = {
         return sendData(testResult, 0, orderData);
     },
 
+    /**
+     * 
+     * @param {JSON} orderData contain enough information that use to find and update the order
+     * @returns message json object
+     */
     triggerOrder: async (orderData) => {
         // enter a position
         if(!cache.isOnTrade()){
