@@ -112,6 +112,9 @@ let connector = {
                 newExistOrder.trigger_time = Date.now();
                 sqlGate.insert(newExistOrder);
             }
+
+            // insert the trade information
+            
         }
         return {
             message: "successfully trigger order",
@@ -119,3 +122,5 @@ let connector = {
         }
     }
 }
+
+module.exports = connector;
