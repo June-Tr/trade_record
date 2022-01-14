@@ -11,7 +11,6 @@ var holder = new Holder();
 var validator = new Validator(require("./strategy/holder"), {}, require("./runningTrade"));
 var sqlGate = require("./facade");
 var cache = require("./cache");
-const { existTrade } = require("./cache");
 
 // helper function
 function sendData(testResult, flag, data){

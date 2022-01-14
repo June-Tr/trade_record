@@ -5,6 +5,12 @@
  */
 let flag = true;
 
+/*
+0: no order + no structure record
+1: no order but there is a structure recorded.
+2: in trade.
+*/
+let currentStage = 1;
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
@@ -21,6 +27,16 @@ let commandController = function(flag){
         readline.close()
         flag = false;
         return;
+      }
+
+      if(["order", "place", "entry"].includes(command.toLocaleLowerCase())){
+        console.log("Place order!");
+
+
+      }
+
+      if(["trigger", "activate", "enter"].includes(command.toLocaleLowerCase())){
+        console.log("trigger order!");
       }
 
       commandController(flag);

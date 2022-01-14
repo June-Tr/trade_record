@@ -35,17 +35,3 @@ module.exports = class Validator {
         return res;
     }
 };
-
-var val = new Validator(new Holder(), {});
-
-let res = val.verify(
-    {
-
-        price:1,
-        stopLost:0.5,
-        takeProfit: 2,
-        pipsPrice : 2
-    }
-)
-val.shutdownHook();
-console.log(res);
